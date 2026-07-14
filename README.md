@@ -1,178 +1,126 @@
-# 📊 AP Agent Dashboard
+# 📊 AP Agent Dashboard AI
 
-An AI-powered **Accounts Payable (AP) Analytics Dashboard** built using **Streamlit, Plotly, and Pandas**.
-
-The dashboard helps finance teams monitor invoices, supplier spending, invoice matching, workflow status, and overall AP performance through interactive charts and KPIs.
+An AI-powered **Accounts Payable Dashboard** built using **Streamlit, Pandas, and Llama 3.2 (Ollama)**. The application provides interactive AP analytics, invoice monitoring, and a natural language AI Assistant for querying invoice data.
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-### Dashboard
-
-- 📄 Total Invoices KPI
-- ✅ Matched Invoices KPI
-- ⏳ Pending Invoices KPI
-- ⚠️ Exceptions KPI
-- 🔁 Duplicate Invoices KPI
-- 💰 Total Invoice Value KPI
-
-### Analytics
-
-- 📈 Monthly Invoice Spend
-- 🏢 Top Suppliers by Invoice Value
-- 🥧 Match Status Distribution
-- 📂 Category-wise Invoice Distribution
-- 📅 Invoice Aging Analysis
-- ⚠️ Supplier Risk Spending Analysis
-
-### Invoice Management
-
-- 🔍 Search Invoice
-- 🏢 Vendor Filter
-- 📂 Category Filter
-- 📄 Invoice Table
-- ⬇️ Export CSV
-
-### Settings
-
-- Dashboard Preferences
-- Theme Selection
-- Currency Selection
-- Table Settings
+- 📊 Interactive Dashboard
+- 📈 Invoice Analytics
+- 🏢 Supplier Analysis
+- 📅 Invoice Aging
+- 🎯 Match Scoring
+- 📄 Invoice Management
+- 🤖 AI Assistant (Llama 3.2)
+- 📤 Export Reports
+- 🔍 Natural Language Queries
 
 ---
 
-# 🛠️ Technologies Used
+## 🧠 AI Assistant
 
-- Python 3.x
-- Streamlit
-- Plotly
-- Pandas
-- OpenPyXL
+The AI Assistant allows users to ask questions about Accounts Payable data in natural language.
+
+### Example Questions
+
+- How many invoices are pending?
+- What is the total invoice spend?
+- Who is the top supplier?
+- Show the match summary.
+- What is the highest invoice amount?
+- Generate a dashboard summary.
 
 ---
 
-# 📂 Project Structure
+## 🏗️ Architecture
 
+```text
+Excel Dataset
+      │
+      ▼
+Pandas Data Processing
+      │
+      ▼
+Dashboard Analytics
+      │
+      ├── KPI Cards
+      ├── Charts
+      ├── Tables
+      │
+      ▼
+🤖 AP AI Assistant
+      │
+      ▼
+Llama 3.2 (Ollama)
+      │
+      ▼
+Business Response
 ```
-AP-Agent-Dashboard/
 
+---
+
+## 📂 Project Structure
+
+```text
+AP-Agent-Dashboard-AI/
+│
+├── agents/
+├── assets/
+├── charts/
+├── components/
+├── data/
+├── llm/
+├── pages/
 ├── app.py
 ├── requirements.txt
 ├── README.md
-│
-├── charts/
-│   ├── spend_chart.py
-│   ├── vendor_chart.py
-│   ├── status_chart.py
-│   ├── category_chart.py
-│   ├── aging_chart.py
-│   └── supplier_risk_chart.py
-│
-├── components/
-│   ├── filters.py
-│   ├── metric_cards.py
-│   └── export_buttons.py
-│
-├── data/
-│   ├── load_data.py
-│   └── AP Agent Sample Dataset copy.xlsx
-│
-├── pages/
-│   ├── dashboard.py
-│   ├── invoices.py
-│   ├── analytics.py
-│   └── settings.py
-│
-└── assets/
+└── .gitignore
 ```
 
 ---
 
-# 📊 Dashboard Modules
+## 🛠️ Technologies Used
 
-## 🏠 Dashboard
-
-Provides an overview of invoice processing with KPIs and visual analytics.
-
----
-
-## 📄 Invoice Management
-
-Manage invoices using search, filters, and CSV export.
+- Python
+- Streamlit
+- Pandas
+- Plotly
+- Ollama
+- Llama 3.2
+- Git & GitHub
 
 ---
 
-## 📈 Analytics
-
-Displays detailed business insights through interactive charts.
-
----
-
-## ⚙️ Settings
-
-Configure dashboard appearance and preferences.
-
----
-
-# 📈 KPIs
-
-- Total Invoices
-- Matched Invoices
-- Pending Invoices
-- Exceptions
-- Duplicate Invoices
-- Total Invoice Value
-
----
-
-# 📊 Charts
-
-- Monthly Invoice Spend
-- Top Suppliers
-- Match Status
-- Category Distribution
-- Invoice Aging
-- Supplier Risk Spending
-
----
-
-# ▶️ Installation
+## ⚙️ Installation
 
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/rlhemnathofficial-21/AP-Agent-Dashboard-AI.git
 ```
 
-Move into the project folder:
+Go to the project folder:
 
 ```bash
-cd AP-Agent-Dashboard
+cd AP-Agent-Dashboard-AI
 ```
 
 Create a virtual environment:
-
-### Windows
 
 ```bash
 python -m venv venv
 ```
 
-Activate:
+Activate the environment:
+
+**Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-### macOS / Linux
-
-```bash
-python3 -m venv venv
-```
-
-Activate:
+**macOS / Linux**
 
 ```bash
 source venv/bin/activate
@@ -184,49 +132,103 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the dashboard:
+---
+
+## 🤖 Install Ollama
+
+Download and install Ollama:
+
+https://ollama.com
+
+Pull the Llama 3.2 model:
+
+```bash
+ollama pull llama3.2:3b
+```
+
+Start Ollama:
+
+```bash
+ollama serve
+```
+
+---
+
+## ▶️ Run the Project
+
+Start the Streamlit application:
 
 ```bash
 streamlit run app.py
 ```
 
----
+Open your browser:
 
-# 📷 Screenshots
-
-Add screenshots here after running the project.
-
-Example:
-
-```
-README Images/
-
-dashboard.png
-
-analytics.png
-
-invoice_management.png
-
-settings.png
+```text
+http://localhost:8501
 ```
 
 ---
 
-# 🔮 Future Enhancements
+## 📊 Dashboard Modules
 
-- PDF Export
-- User Authentication
-- Database Integration
-- AI Invoice Insights
-- Real-time Notifications
-- Role-based Access Control
+- Dashboard
+- Invoices
+- Analytics
+- AI Assistant
+- Settings
 
 ---
 
-# 👨‍💻 Developed By
+## 💡 Sample AI Queries
 
-**R. Hemnath**
+```text
+How many invoices are pending?
 
-BE Cyber Security
+Total invoice spend
 
-Streamlit • Plotly • Python • Pandas
+Average invoice amount
+
+Top supplier
+
+Highest invoice amount
+
+Match summary
+
+Generate dashboard summary
+```
+
+---
+
+## 🔮 Future Enhancements
+
+- Chat-style AI conversation
+- Invoice risk prediction
+- PDF report generation
+- Multi-file upload
+- Role-based authentication
+- Advanced AP insights
+
+---
+
+## 👨‍💻 Author
+
+**R. HEMNATH**
+
+Accounts Payable AI Dashboard Project
+
+---
+
+## ⭐ Acknowledgements
+
+- Streamlit
+- Pandas
+- Plotly
+- Ollama
+- Meta Llama 3.2
+
+---
+
+## 📄 License
+
+This project is developed for educational and internship purposes.
