@@ -8,6 +8,7 @@ from datetime import datetime
 from pages.dashboard import show_dashboard
 from pages.invoices import show_invoices
 from pages.analytics import show_analytics
+from pages.ai_assistant import show_ai_assistant
 from pages.settings import show_settings
 
 # =====================================================
@@ -92,6 +93,7 @@ page = st.radio(
         "🏠 Dashboard",
         "📄 Invoices",
         "📈 Analytics",
+        "🤖 AI Assistant",
         "⚙ Settings"
     ],
     horizontal=True,
@@ -115,6 +117,10 @@ elif page == "📄 Invoices":
 elif page == "📈 Analytics":
 
     show_analytics()
+
+elif page == "🤖 AI Assistant":
+
+    show_ai_assistant()
 
 elif page == "⚙ Settings":
 

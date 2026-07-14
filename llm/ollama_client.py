@@ -5,7 +5,7 @@ class OllamaClient:
 
     def __init__(
         self,
-        model="llama3.2",
+        model="llama3.2:3b",
         url="http://localhost:11434/api/generate"
     ):
         self.model = model
@@ -20,7 +20,6 @@ class OllamaClient:
         }
 
         try:
-
             response = requests.post(
                 self.url,
                 json=payload,
@@ -34,5 +33,4 @@ class OllamaClient:
             return data.get("response", "").strip()
 
         except Exception as e:
-
-            return f"Error: {str(e)}"
+            return f"Error: {e}"
